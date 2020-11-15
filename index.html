@@ -178,12 +178,31 @@
         </nav>
       </div>
     </header>
+    <div class="dropdown" data-for="1">
+          <div class='dropdown__title'>
+            Language
+          </div>
+          <div class='dropdown__close'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+              <path id="path" d="M19,6.4,17.6,5,12,10.6,6.4,5,5,6.4,10.6,12,5,17.6,6.4,19,12,13.4,17.6,19,19,17.6,13.4,12Z" transform="translate(-5 -5)" fill-rule="evenodd" opacity="0.54"/>
+            </svg>
+          </div>
+          <nav class='dropdown__nav'>
+            <li class="dropdown__item">Abkhazian</li>
+            <li class="dropdown__item">Adyghe</li>
+            <li class="dropdown__item">Afrikaans</li>
+            <li class="dropdown__item">Albanian</li>
+            <li class="dropdown__item dropdown__item--active">Georgian</li>
+            <li class="dropdown__item">Amharic</li>
+            <li class="dropdown__item">Arabic</li>
+          </nav>
+        </div>
     <main>
       <section class="navigation">
         <div class="navigation__svg--block dropdown--toggler"><svg class='arrow' xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5">
                 <path id="path" d="M7,10l5,5,5-5Z" transform="translate(-7 -10)" fill-rule="evenodd"/>
               </svg></div>
-        <div class="dropdown__elem">
+        <div class="dropdown__elem" id="1">
           <div class='dropdown__elem--inner dropdown--toggler'>
             <span class='text--active dropdown--selected'>
               Georgian
@@ -204,25 +223,7 @@
             </svg>
             </div>
           </div>
-          <div class="dropdown">
-            <div class='dropdown__title'>
-              Language
-            </div>
-            <div class='dropdown__close'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
-                <path id="path" d="M19,6.4,17.6,5,12,10.6,6.4,5,5,6.4,10.6,12,5,17.6,6.4,19,12,13.4,17.6,19,19,17.6,13.4,12Z" transform="translate(-5 -5)" fill-rule="evenodd" opacity="0.54"/>
-              </svg>
-            </div>
-            <nav class='dropdown__nav'>
-              <li class="dropdown__item">Abkhazian</li>
-              <li class="dropdown__item">Adyghe</li>
-              <li class="dropdown__item">Afrikaans</li>
-              <li class="dropdown__item">Albanian</li>
-              <li class="dropdown__item dropdown__item--active">Georgian</li>
-              <li class="dropdown__item">Amharic</li>
-              <li class="dropdown__item">Arabic</li>
-            </nav>
-          </div>
+          
         </div>
               <div class="features__item features__item--active">
                 <div class="features__item--inner">
@@ -288,7 +289,7 @@
         </div>
         <div class='content__item'>
           <span class="description">Distance Index</span> 
-          <div class="dropdown__elem">
+          <div class="dropdown__elem" id="2">
             <div class='dropdown__elem--inner dropdown--toggler'>
               <span class='text--active dropdown--selected'>
                 1
@@ -307,7 +308,7 @@
                 />
               </svg>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" data-for="2">
               <nav class='dropdown__nav'>
                 <li class="dropdown__item dropdown__item--active">1</li>
                 <li class="dropdown__item">2</li>

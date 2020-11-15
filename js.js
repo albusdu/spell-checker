@@ -7,7 +7,23 @@ const dropdownToggler = () => {
   let toggler = document.querySelectorAll('.dropdown--toggler')
   toggler.forEach((item) => {
     item.addEventListener('click', () => {
+      let dropdowns = document.querySelectorAll('.dropdown')
       item.parentElement.classList.toggle('open')
+      dropdowns.forEach((elem) => {
+        if (
+          item.parentElement.getAttribute('id') ===
+          elem.getAttribute('data-for')
+        ) {
+          let posX = window.scrollX + item.getBoundingClientRect().left - 6
+          let posY =
+            window.scrollY +
+            item.getBoundingClientRect().top +
+            item.offsetHeight +
+            15
+          elem.style.cssText = `top: ${posY}px;left:${posX}px; width: 200px`
+          elem.classList.toggle('open')
+        }
+      })
     })
   })
 }
@@ -17,7 +33,16 @@ const closeDropdown = () => {
   let close = document.querySelectorAll('.dropdown__close')
   close.forEach((item) => {
     item.addEventListener('click', () => {
-      item.parentElement.parentElement.classList.remove('open')
+      item.parentElement.classList.remove('open')
+      let dropdownElems = document.querySelectorAll('.dropdown__elem')
+      dropdownElems.forEach((elem) => {
+        if (
+          elem.getAttribute('id') ===
+          item.parentElement.getAttribute('data-for')
+        ) {
+          elem.classList.remove('open')
+        }
+      })
     })
   })
 }
@@ -33,15 +58,20 @@ const selectDropdown = () => {
           items[i].classList.remove('dropdown__item--active')
         }
       }
-      e.target.classList.add('dropdown__item--active')
-      let selectedInfo =
-        e.target.parentElement.parentElement.previousElementSibling
-          .firstElementChild
-      selectedInfo.innerHTML = e.target.innerHTML
-      selectedInfo.setAttribute('value', e.target.innerHTML)
-      e.target.parentElement.parentElement.parentElement.classList.remove(
-        'open'
-      )
+      let dropdownElems = document.querySelectorAll('.dropdown__elem')
+      dropdownElems.forEach((elem) => {
+        if (
+          elem.getAttribute('id') ===
+          item.parentElement.parentElement.getAttribute('data-for')
+        ) {
+          e.target.classList.add('dropdown__item--active')
+          let selectedInfo = elem.children[0].children[0]
+          selectedInfo.innerHTML = e.target.innerHTML
+          selectedInfo.setAttribute('value', e.target.innerHTML)
+          elem.classList.remove('open')
+          e.target.parentElement.parentElement.classList.remove('open')
+        }
+      })
     })
   })
   let activeFeature = document.querySelector('.features__item--active')
@@ -85,13 +115,9 @@ document
 
 const colorPos = () => {
   if (window.innerWidth > 1024) {
-    setTimeout(() => {
-      let a = document.querySelector('.nav--top').offsetWidth
-      let b = document.querySelector('.nav--bottom').offsetWidth
-      document.querySelector('.nav__item--color').style.right = `${
-        a + b + 11
-      }px`
-    }, 400)
+    let a = document.querySelector('.nav--top').offsetWidth
+    let b = document.querySelector('.nav--bottom').offsetWidth
+    document.querySelector('.nav__item--color').style.right = `${a + b + 11}px`
   }
 }
 colorPos()
