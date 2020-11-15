@@ -74,3 +74,25 @@ const setTheme = () => {
   })
 }
 setTheme()
+
+const headerBackground = () => {
+  let background = document.querySelector('.header--background')
+  background.parentElement.classList.remove('open')
+}
+document
+  .querySelector('.header--background')
+  .addEventListener('click', headerBackground)
+
+const colorPos = () => {
+  if (window.innerWidth > 1024) {
+    setTimeout(() => {
+      let a = document.querySelector('.nav--top').offsetWidth
+      let b = document.querySelector('.nav--bottom').offsetWidth
+      document.querySelector('.nav__item--color').style.right = `${
+        a + b + 11
+      }px`
+    }, 400)
+  }
+}
+colorPos()
+document.addEventListener('resize', colorPos)

@@ -83,6 +83,7 @@
 .dropdown__elem .dropdown .dropdown__close {
   display: flex;
   padding-right: 22px;
+  cursor: pointer;
 }
 .dropdown__elem .dropdown .dropdown__nav {
   margin-top: 29px;
@@ -90,12 +91,21 @@
   max-height: 170px;
   overflow: auto;
 }
-
+.dropdown__elem .dropdown .dropdown__nav::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown__elem .dropdown .dropdown__nav::-webkit-scrollbar-track {
+  background: #d6d6d6;
+}
+.dropdown__elem .dropdown .dropdown__nav::-webkit-scrollbar-thumb {
+  background: #4d4d4d;
+}
 .dropdown__elem .dropdown .dropdown__nav .dropdown__item {
   font-size: 14px;
   font-weight: var(--medium);
   padding: 6px 22px 7px 21px;
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .dropdown__elem
@@ -104,8 +114,12 @@
   .dropdown__item.dropdown__item--active {
   background: var(--hoverColor);
 }
+.dropdown__elem .dropdown .dropdown__nav .dropdown__item:hover {
+  background: var(--hoverColor);
+}
 /*dropdown*/
 .btn {
+  cursor: pointer;
   background-color: var(--mainColor);
   transition: background-color var(--transition);
   border-radius: 2px;
