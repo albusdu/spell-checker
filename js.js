@@ -117,8 +117,14 @@ const colorPos = () => {
   if (window.innerWidth > 1023) {
     let a = document.querySelector('.nav--top').offsetWidth
     let b = document.querySelector('.nav--bottom').offsetWidth
-    document.querySelector('.nav__item--color').style.right = `${a + b + 11}px`
+    document.querySelector('.nav__item--color').style.cssText = `right:${
+      a + b + 11
+    }px; top: 50%`
+  } else {
+    document.querySelector(
+      '.nav__item--color'
+    ).style.cssText = `top: calc(100% + 37.5px); right: 0;`
   }
 }
 colorPos()
-document.addEventListener('resize', colorPos)
+window.onresize = colorPos
