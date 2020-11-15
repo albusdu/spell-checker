@@ -114,7 +114,7 @@ document
   .addEventListener('click', headerBackground)
 
 const colorPos = () => {
-  if (window.innerWidth > 1024) {
+  if (window.innerWidth > 1003) {
     let a = document.querySelector('.nav--top').offsetWidth
     let b = document.querySelector('.nav--bottom').offsetWidth
     document.querySelector('.nav__item--color').style.right = `${a + b + 11}px`
