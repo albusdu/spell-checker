@@ -1,0 +1,19 @@
+:root {
+  --skyblue: #1e90ff;
+  --grey: #2f3542;
+  --yellow: #ffa502;
+  --orange: #ff6348;
+  --green: #2ed573;
+  --blue: #5352ed;
+  --red: #eb4d4b;
+  --white: #fff;
+  --textblack: rgba(0, 0, 0, 0.87);
+  --snow: #fafafa;
+  --mainColor: ;
+  --borderColor: rgba(0, 0, 0, 0.12);
+  --transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --hoverColor: #f6f6f6;
+  --bold: 700;
+  --regular: 400;
+  --medium: 500;
+}
