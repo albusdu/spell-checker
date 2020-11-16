@@ -127,7 +127,7 @@ const colorPos = () => {
   } else {
     document.querySelector(
       '.nav__item--color'
-    ).style.cssText = `top: calc(100% + 37.5px); right: 0;`
+    ).style.cssText = `top: calc(100% + 41px); right: 0;`
   }
 }
 colorPos()
