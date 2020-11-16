@@ -120,6 +120,10 @@ const colorPos = () => {
     document.querySelector('.nav__item--color').style.cssText = `right:${
       a + b + 11
     }px; top: 50%`
+  } else if (window.innerWidth < 768) {
+    document.querySelector(
+      '.nav__item--color'
+    ).style.cssText = `top: 0; right: 0;`
   } else {
     document.querySelector(
       '.nav__item--color'
