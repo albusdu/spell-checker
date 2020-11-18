@@ -13,7 +13,7 @@ let words = [
 CKEDITOR.replace('spellcheck')
 CKEDITOR.on('instanceReady', (e) => {
   e.editor.on('key', (e) => {
-    if (e.data.keyCode == 32 || e.data.keyCode == 13) {
+    if (e.data.keyCode == 32 || e.data.keyCode == 13 || e.data.keyCode == 229) {
       let text = e.editor.editable().getText()
       spellCheck(text)
       //for update caret position after set
